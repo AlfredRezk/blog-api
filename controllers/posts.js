@@ -17,7 +17,7 @@ exports.create = async (req, res) => {
   if (!err.isEmpty()) throw new ErrorResponse(403, err.errors[0].msg);
   // automatically add userId to req.body
   req.body.userId = req.user._id;
-
+console.log(req.file)
   if(req.file)
     req.body.image = req.file.orginialname;
   
