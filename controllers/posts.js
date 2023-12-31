@@ -19,7 +19,7 @@ exports.create = async (req, res) => {
   req.body.userId = req.user._id;
 console.log(req.file)
   if(req.file)
-    req.body.image = req.file.orginialname;
+   req.body.image = req.file.originalname;
   
   const data = await Model.create(req.body);
   res.status(201).json({ success: true, data });
