@@ -14,6 +14,7 @@ const MODE = process.env.MODE || 'production';
 app.use(express.json())  //To parse JSON requests (req.body)
 app.use(require('./middlewares/logger')()) //logger
 app.use('/img', express.static('./images'));
+app.use(cors())
 
 // Connect to database
 require('./config/db')();
